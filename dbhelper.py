@@ -33,7 +33,7 @@ class DBHelper(object):
                 cursor.execute(query)
                 connection.commit()
         finally:
-            connection.cloase()           
+            connection.close()           
     
     def clear_all(self):
         connection = self.connect()
