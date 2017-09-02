@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-
+	
+		<script type="text/javascript"
+			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRSg9WaW0dXcIbiLKzxu9AaOFs9K7Lr7E">
+		</script>
+		
 		<script type="text/javascript">
 			function initialize() {
 				var mapOptions = {
@@ -13,13 +17,10 @@
 				google.maps.Map(document.getElementById("map-canvas"),mapOptions);
 			}
 		</script>
-		<script type="text/javascript"
-			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRSg9WaW0dXcIbiLKzxu9AaOFs9K7Lr7E">
-		</script>
+
 		
 	</head>
-	<body>
 		<body onload="initialize()">
-		<div id="map-canvas" style="width:80%; hegiht:500px;"></div>
-	</body>
+			<div id="map-canvas" style="width:80%; hegiht:500px;"></div>
+		</body>
 </html>
