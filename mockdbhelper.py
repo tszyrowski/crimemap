@@ -2,6 +2,9 @@
 Created on 18 Aug 2017
 
 @author: T
+
+MockDBHelper provides mirrored functionality of DBhelpeer 
+The script is for testing purposes
 '''
 class MockDBHelper:
     
@@ -9,7 +12,7 @@ class MockDBHelper:
         pass
     
     def get_all_inputs(self):
-        pass
+        return []
     
     def add_input(self, data):
         pass

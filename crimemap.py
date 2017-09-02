@@ -4,9 +4,9 @@ Created on 18 Aug 2017
 @author: T
 '''
 import dbconfig
-if dbconfig.test:
+if dbconfig.test:   # for testing purpose. If dbconfig without credentials
     from mockdbhelper import MockDBHelper as DBHelper
-else:
+else:               # in other case "test=False" import credentials
     from dbhelper import DBHelper
 from flask import Flask
 from flask import render_template
@@ -14,6 +14,8 @@ from flask import request
 
 app = Flask(__name__)
 DB = DBHelper()
+
+googleMapsApiKey="AIzaSyCRSg9WaW0dXcIbiLKzxu9AaOFs9K7Lr7E"
 
 @app.route("/")
 def home():
