@@ -74,7 +74,7 @@ class DBHelper(object):
                     'latitude': crime[0],
                     'longitude': crime[1],
 #                     'date': datetime.datetime.strftime(dateOfCrime, '%Y-%m-%d'),
-                    'date': crime[2],
+                    'date': str(crime[2]),
                     'category': crime[3],
                     'description': crime[4],
                     }
