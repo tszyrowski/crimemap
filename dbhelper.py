@@ -69,6 +69,7 @@ class DBHelper(object):
             for crime in cursor:
                 logging.debug('This is crime[2]: ', crime[2])
                 dateOfCrime = datetime.datetime.strptime(crime[2], "%Y-%m-%d %H:%M:%S" )
+                print('my dateOfCrime ', dateOfCrime, file=sys.stderr)
                 named_crime = {
                     'latitude': crime[0],
                     'longitude': crime[1],
