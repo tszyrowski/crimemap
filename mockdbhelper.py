@@ -16,3 +16,7 @@ class MockDBHelper:
     
     def clear_all(self):
         pass
+    
+    def add_crime(self, category, date, latitude, longitude, description):
+        print("INSERT INTO crimes (category, date, latitude, longitude, description) VALUES (%s, %s, %s, %s, %s)" %
+              (category, date, latitude, longitude, description))
