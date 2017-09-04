@@ -3,15 +3,18 @@ Created on 18 Aug 2017
 
 @author: T
 '''
+import json
+
 import dbconfig
 if dbconfig.test:
     from mockdbhelper import MockDBHelper as DBHelper
 else:
     from dbhelper import DBHelper
+    
 from flask import Flask
 from flask import render_template
 from flask import request
-import json
+
 
 app = Flask(__name__)
 DB = DBHelper()
