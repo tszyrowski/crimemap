@@ -5,6 +5,7 @@ Created on 18 Aug 2017
 '''
 import pymysql
 import dbconfig
+import datetime
 
 class DBHelper(object):
     
@@ -57,7 +58,25 @@ class DBHelper(object):
         finally:
             connection.close()
     
-    
+    def get_all_crimes(self):
+        connection = self.connect()
+        try:
+            query = "SELECT latitude, longitude, date, category, description FROM crimes;"
+            with connection.cursor() as cursor:
+                cursor.execute(query)
+            named_crimes = []
+            for crime in cursor:
+                names_crime = {
+                    'latitude': crime[0],
+                    'longitude': crime[1],
+                    'date': datetime.datetime.strftime(crime[2], '%Y-%m-%d'),
+                    'category': crime[3],
+                    'description': crime[4],
+                    }
+                named_crimes.append(named_crime)
+            return named_crimes
+        finally:
+            connection.close()
 
 
 
