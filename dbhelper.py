@@ -67,13 +67,14 @@ class DBHelper(object):
                 cursor.execute(query)
             named_crimes = []
             for crime in cursor:
-                logging.debug('This is crime[2]: ', crime[2])
-                dateOfCrime = datetime.datetime.strptime(crime[2], "%Y-%m-%d %H:%M:%S" )
-                print('my dateOfCrime ', dateOfCrime, file=sys.stderr)
+#                 logging.debug('This is crime[2]: ', crime[2])
+#                 dateOfCrime = datetime.datetime.strptime(crime[2], "%Y-%m-%d %H:%M:%S" )
+#                 print('my dateOfCrime ', dateOfCrime, file=sys.stderr)
                 named_crime = {
                     'latitude': crime[0],
                     'longitude': crime[1],
-                    'date': datetime.datetime.strftime(dateOfCrime, '%Y-%m-%d'),
+#                     'date': datetime.datetime.strftime(dateOfCrime, '%Y-%m-%d'),
+                    'date': crime[2],
                     'category': crime[3],
                     'description': crime[4],
                     }
