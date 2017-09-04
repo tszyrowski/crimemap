@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		<link type="text/css" rel="stylesheet" href="{{url_for('static', filename='css/style.css') }}"/>
+
 		<script type="text/javascript"
 			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRSg9WaW0dXcIbiLKzxu9AaOFs9K7Lr7E">
 		</script>
@@ -29,13 +31,17 @@
 			map: map
 			});
 		}
+		console.log('latitude: ', location.lat())
+		console.log('value ', document.getElementById('latitude').value)
+		document.getElementById('latitude').value = location.lat();
+		document.getElementById('longitude').value = location.lng();
 		}
 		</script>
 	</head>
 		<body onload="initialize()">
 			<h1>CrimeMap</h1>
 			<p>A map of recent criminal activity in the area</p>
-			<div id="map-canvas" style="width:80%; height:500px;"></div>
+			<div id="map-canvas"></div>
 			
 			<div id="newcrimeform">
 				<h2>Submit new crime</h2>
@@ -48,7 +54,7 @@
 				<label for="date">Date</label>
 				<input name="date" id="date" type="date">
 				<label for="latitude">Latitude</label>
-				<input name="latitude" id="latitiude" type="text">
+				<input name="latitude" id="latitude" type="text">
 				<label for="longitude">Longitude</label>
 				<input name="longitude" id="longitude" type="text">
 				<label for="description">Description</label>
