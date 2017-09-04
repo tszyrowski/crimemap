@@ -6,6 +6,7 @@ Created on 18 Aug 2017
 import pymysql
 import dbconfig
 import datetime
+import logging, sys 
 
 class DBHelper(object):
     
@@ -66,7 +67,7 @@ class DBHelper(object):
                 cursor.execute(query)
             named_crimes = []
             for crime in cursor:
-                print(crime[2])
+                logging.debug('This is crime[2]: ', crime[2])
                 named_crime = {
                     'latitude': crime[0],
                     'longitude': crime[1],
