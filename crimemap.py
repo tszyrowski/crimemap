@@ -76,7 +76,8 @@ def format_date(userdate):
 
 def sanitize_string(userinput):
     whitelist = string.ascii_letters + string.digits + "!?$.,:;-'()&"
-    return filter(lambda x: x in whitelist, userinput)
+    # in pytghon2 filter returns string if string passed, use "".join() for python3
+    return "".join(filter(lambda x: x in whitelist, userinput))
     
 
 if __name__ == '__main__':
